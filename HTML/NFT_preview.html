@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>View NFT</title>
+        <script>
+            // Function to decode and display the NFT image
+            function displayNFT(tokenURI) {
+                // Extract the base64 encoded JSON
+                const encodedJson = tokenURI.split(",")[1];
+                const decodedJson = atob(encodedJson);
+                const json = JSON.parse(decodedJson);
+
+                // Extract and decode the SVG image data
+                const encodedImage = json.image.split(",")[1];
+                const decodedImage = atob(encodedImage);
+
+                // Create an image element and set its source to the decoded SVG
+                const img = new Image();
+                img.src = "data:image/svg+xml;base64," + btoa(decodedImage);
+                img.alt = "NFT Image";
+
+                // Append the image to the div container in the HTML
+                document.getElementById("nft").appendChild(img);
+            }
+
+            // Ensure the DOM is fully loaded before attempting to display the NFT
+            document.addEventListener("DOMContentLoaded", () => {
+                // Paste the encoded tokenURI string from your tests here
+                const tokenURI =
+                    "data:application/json;base64,eyJuYW1lIjoiRnVuZGluZyBEcmVhbXMgVG9rZW4iLCAiZGVzY3JpcHRpb24iOiJUaGlzIE5GVCBpcyBhIHRoYW5rIHlvdSBub3RlIGZvciBmdW5kaW5nIGEgZHJlYW0gdGhyb3VnaCBGdW5kTWUuIEl0IHN5bWJvbGl6ZXMgeW91ciBnZW5lcm91cyBzdXBwb3J0LiIsICJpbWFnZSI6ImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEQ5NGJXd2dkbVZ5YzJsdmJqMGlNUzR3SWlCbGJtTnZaR2x1WnowaVZWUkdMVGdpUHo0OGMzWm5JSGh0Ykc1elBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHlNREF3TDNOMlp5SWdkbVZ5YzJsdmJqMGlNUzR4SWlCMmFXVjNRbTk0UFNJd0lEQWdOREF3SURRd01DSWdjSEpsYzJWeWRtVkJjM0JsWTNSU1lYUnBiejBpZUUxcFpGbE5hV1FnYldWbGRDSStQSE4wZVd4bElIUjVjR1U5SW5SbGVIUXZZM056SWo0OElWdERSRUZVUVZ0MFpYaDBJSHNnWm05dWRDMW1ZVzFwYkhrNklHMXZibTl6Y0dGalpUc2dmUzVvTVNCN0lHWnZiblF0YzJsNlpUb2dOakJ3ZURzZ2ZTNW9NaUI3SUdadmJuUXRjMmw2WlRvZ05EQndlRHNnZlM1b015QjdJR1p2Ym5RdGMybDZaVG9nTlRCd2VEc2dmUzVsYlc5cWFTQjdJR1p2Ym5RdGMybDZaVG9nTmpCd2VEc2dmVjFkUGp3dmMzUjViR1UrUEhKbFkzUWdlRDBpTUNJZ2VUMGlNQ0lnZDJsa2RHZzlJalF3TUNJZ2FHVnBaMmgwUFNJME1EQWlJR1pwYkd3OUlpTkVNMFF6UkRNaUlITjBjbTlyWlQwaVlteGhZMnNpSUhOMGNtOXJaUzEzYVdSMGFEMGlOaUl2UGp4MFpYaDBJR05zWVhOelBTSm9NU0lnZUQwaU1qQWlJSGs5SWpnd0lqNVVhR0Z1YXlCWmIzVThMM1JsZUhRK1BIUmxlSFFnWTJ4aGMzTTlJbWd5SWlCNFBTSXlNQ0lnZVQwaU1UTXdJajVtYjNJZ1puVnVaR2x1WnpvOEwzUmxlSFErUEhSbGVIUWdZMnhoYzNNOUltZ3pJaUI0UFNJeU1DSWdlVDBpTWpJd0lqNHhNak0wTlRZM09Ea3hNak04TDNSbGVIUStQSFJsZUhRZ1kyeGhjM005SW1WdGIycHBJaUI0UFNJeU1DSWdlVDBpTXpFd0lqNG1JM2d5TnpZME96d3ZkR1Y0ZEQ0OEwzTjJaejQ9In0=";
+
+                // Display the NFT
+                displayNFT(tokenURI);
+            });
+        </script>
+    </head>
+    <body>
+        <div id="nft"></div>
+        <!-- Container for the NFT -->
+    </body>
+</html>
