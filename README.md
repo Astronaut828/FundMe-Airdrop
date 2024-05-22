@@ -14,3 +14,10 @@ The `FundMe` contract is a decentralized crowdfunding solution that allows users
 - **Details:** 
   - Resets the list of funders.
   - Transfers the entire balance to the campaign creator.
+
+### Withdraw Funds with Airdrop
+- **Description:** Allows the campaign creator to withdraw all collected funds and airdrop SVG-ERC721 tokens to all contributors.
+- **Details:**
+  - Mints and sends an ERC721 token to each contributor.
+  - Resets the list of funders.
+  - Transfers the entire balance to the campaign creator.
