@@ -27,3 +27,9 @@ The `FundMe` contract is a decentralized crowdfunding solution that allows users
 - **Details:**
   - Generates an SVG image embedded in the token metadata.
   - Encodes the SVG in Base64 format and constructs a JSON response.
+
+## Deployment
+The contract should be deployed by the campaign creator, who will have the authority to withdraw funds and perform token airdrops.
+
+## Questions
+For any questions or further information, please reach out.
