@@ -21,3 +21,9 @@ The `FundMe` contract is a decentralized crowdfunding solution that allows users
   - Mints and sends an ERC721 token to each contributor.
   - Resets the list of funders.
   - Transfers the entire balance to the campaign creator.
+
+### Token URI
+- **Description:** Builds the token URI for the ERC721 token.
+- **Details:**
+  - Generates an SVG image embedded in the token metadata.
+  - Encodes the SVG in Base64 format and constructs a JSON response.
