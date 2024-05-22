@@ -8,3 +8,9 @@ The `FundMe` contract is a decentralized crowdfunding solution that allows users
 - **Details:** 
   - Ensures the funding amount is at least 0.01 ether.
   - Adds unique contributors to a list for potential airdrop of tokens.
+
+### Withdraw Funds
+- **Description:** Allows the campaign creator to withdraw all collected funds.
+- **Details:** 
+  - Resets the list of funders.
+  - Transfers the entire balance to the campaign creator.
